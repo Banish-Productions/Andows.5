@@ -1,0 +1,13 @@
+.monospace{
+  font-family: Courier New , Comic Sans MS, Monospace ;
+    text-shadow: 0px , 0px , 1px white;
+  text-shadow: 2px 2px 1px rgba(255,255,255,0.406);
+  text-decoration: none;
+  color: #00daff;
+  text-decoration-thickness: 5px white;
+  stroke: 5px white;
+}
+
+.offlineinfo{
+  font-size: 80px;
+}

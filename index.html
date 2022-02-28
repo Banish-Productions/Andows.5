@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Andows</title>
+  <meta name="description" content="Andows windows on Android made by banish check it out by searching banish.in" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="andows.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="andows.ico" />
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+body {
+  font-family: 'Roboto Mono', BerlinSansFB
+  ,monospace, sans-serif, Courier New;
+  background-repeat: repeat-y;
+  font-size: 10px;
+  font-weight:bolder;
+  background-size: cover;
+  background-color: rgb(0, 0, 0);
+  background-image: url('./Theme/default/adbg.jpg');
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.loader{
+  height: 100%;
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+}
+
+@font-face {
+  font-family: BerlinSansFB;
+  src: url(Berlin-Sans-FB-Regular.ttf);
+}
+
+#withnet{
+  display: block;
+}
+
+#withoutnet{
+  display: none;
+  width: 100%;
+  height: 100%;
+
+}
+
+#container {
+  border: 3px solid #f1f1f1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color:rgba(98,0,0,0.608);
+  color: white;
+  text-shadow: 1px 1px 1px black,
+  -1px -1px 1px grey;
+  display: none;
+  position: relative;
+  
+  transition: 0.3s;
+}
+.container {
+  border: 3px solid #f1f1f1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color:rgba(98,0,0,0.608);
+  color: white;
+  text-shadow: 1px 1px 1px black,
+  -1px -1px 1px grey;
+  display: none;
+  position: relative;
+  
+  transition: 0.3s;
+}
+
+.top {
+  padding: 10px;
+  background: #f1f1f1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.content {
+  padding: 10px;
+}
+* {
+  box-sizing: border-box;
+}
+
+.dot-1 {
+  height: 20px;
+  color: white;
+  width: 20px;
+  padding: 0.1px 6px;
+  margin: 5px;
+  font-size: 20px;
+  background-color: rgb(0,0,0);
+  border-radius: 1000%;
+}
+
+.dot-2 {
+  height: 20px;
+  color: white;
+  width: 20px;
+  padding: 0.1px 6px;
+  margin: 5px;
+  font-size: 20px;
+  background-color: rgb(0,0,0);
+  border-radius: 1000%;
+  
+}
+
+.dot-3 {
+  height: 20px;
+  color: white;
+  width: 20px;
+  padding: 0.1px 6px;
+  font-size: 20px;
+  background-color: #ee0000;
+  border-radius: 50%;
+  position: relative;
+  right: -20px;
+}
+
+.themelook{
+  display: block;
+  width:80px;
+  text-align: center;
+  margin-left: 40%;
+  margin-top: 10%;
+  font-family: 'Roboto Mono', BerlinSansFB, monospace, sans-serif;
+}
+
+.sidenav {
+  scrollbar-highlight-color: #63fff5;
+  box-shadow: 2px 2px 20px #ffffff;
+  height: 80%;
+  width: 0%;
+  position: fixed;
+  z-index: 100000;
+  border-radius: 50px;
+  bottom: 0;
+  color: white;
+  left: 0;
+  background-color: rgba(98,0,57,0.5);
+  background-blend-mode: staturation;
+  background-image: url(./Theme/sd.jpg);
+  background-size: cover;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  scrollbar-highlight-color: #63fff5;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 50%;
+  color: white;
+  text-shadow: 1px 1px 1px black,
+  -1px -1px 1px grey;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover {
+  color: #d5d5d7;
+  text-shadow: 1px 1px 1px black;
+}
+
+.sidenav .closebtn {
+  border-radius: 50px;
+  position: absolute;
+  bottom: 7px;
+  left: -41px;
+  box-shadow: 2px 2px 20px skyblue;
+  padding: 0px;
+  z-index: 1;
+  margin-left: 50px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0, 0, 255) rgb(0, 43, 49);
+}
+
+/* Targtes on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(0, 41, 51);
+  border-radius: 20px;
+  border: inset 4px darkgrey;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 41, 51) ;
+  border-radius: 20px;
+  border: 2px outset royalblue;
+}
+
+@keyframes color {
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(100deg);
+  }
+}
+
+#settings{
+  scroll-behavior: smooth;
+  color: white;
+  background-size: cover;
+  border-radius: %;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 0%;
+  width: 100%;
+  overflow-y: scroll;
+  background-image: url(./sd.jpg);
+}
+
+.themesort{
+  text-align: center;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
+  padding: 4px;
+  border: inset 2px ;
+  border-radius: 90px;
+}
+.themesortname{
+  padding-left:  5%;
+  cursor:alias;
+  padding-right: 5%;
+}
+.themesortnameactive{
+  border: outset 2px;
+  padding-left:  5%;
+  padding-right: 5%;
+  background-color: #00daff;
+}
+
+#settings #title{
+  display: flex;
+  justify-content: center;
+}
+.sidenav p {
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    right: 0;
+    font-weight: bold;
+    top: 0px;
+    color: white;
+    font-size: 10px;
+    bottom: 25px;
+    height: 100%;
+    background: rgba(127,127,127,0.15),
+    rgba(0,255,247,0.15);
+    box-shadow: -1px -1px 1px #000000,
+    1px 1px 1px #000000;
+}
+
+
+
+.app{
+    width: 50px;
+    padding-top: 10px;
+}
+
+.app img{
+    background: linear-gradient(to bottom left, rgba(189,255,250,0.28) 0%, rgba(99,255,170,0.365) 100%);
+    margin: 20px;
+    border: 2px ;
+    border: outset 5px rgba(99,255,164,0.505);
+    padding:  2px;
+    margin-left: 5px;
+}
+.taskbarapp{
+    background: linear-gradient(to bottom left, rgba(189,255,250,0.28) 0%, rgba(99,255,170,0.365) 100%);
+    border: outset 5px rgba(99,255,249,0.599);
+    padding: 2px;
+    width: 100%;
+    margin-left: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px royalblue;
+}
+.sidenav{
+    background-image: url(./sd.jpg);
+}
+.sidenav span {
+    animation: popup;
+    background-repeat: no-repeat;
+    position: absolute;
+    box-shadow: 4px 5px 2px skyblue;
+    padding: 20px 20px;
+    height: 20px;
+    width: 20px;
+    top: 100px;
+    z-index: 1000;
+    border: outset 5px #63fff5;
+    background-image: url('./startmenu.png');
+    background-size: contain;
+    text-align: center;
+    color: skyblue;
+    text-shadow: 1px 1px 1px royalblue;
+    justify-content: center;
+    margin: 10px;
+}
+@keyframes popup{
+    0%{
+        width: 20px;
+        height: 20px;
+    }
+    100%{
+        width: 50%;
+        height: 100px;
+    }
+}
+.link{
+    border-radius: 20%;
+   
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding-top: 10px;
+}
+.link a{
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 15px;
+    margin: 10px;
+    
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.themename{
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(78,0,46);
+  color: White;
+  border-radius: 10%;
+}
+
+.themehr{
+  color: rgba(239,127,0,0.435);
+  margin: 10px 0px;
+}
+
+.taskbar{
+  position: fixed;
+  left: -1px;
+  bottom: -1px;
+  width: 100%;
+  padding: 10px;
+  z-index: 99;
+ background: linear-gradient(to bottom left, #00434754 0%, #ff555555 100%);
+}
+#clock{
+    position: absolute;
+    right: 10px;
+    padding: 10px;
+    bottom: 10px;
+}
+.option{
+    border-radius: 50pc;
+    background: linear-gradient(to bottom left,rgba(189,254,255,0.373) 0%, rgba(99,255,190,0.36) 100%);
+    border: outset 5px rgba(99,243,255,0.366);
+    padding: 2px;
+    float: right;
+    margin-left: 10px;
+    
+}
+#myDIV{
+  height: 0px;
+}
+#cover small{
+    font-size: 10px;
+}
+.appclose{
+  width: 100%;
+  border: 2px outset lightgrey;
+  background: #ff0000;
+  color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 50px;
+  height: 100%;
+  
+}
+
+#withoutnet{
+  color: #00daff;
+  background-color: black;
+  font-size: 60px;
+  width: 1080px;
+  height: 500px;
+}
+
+#runoffline{
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  margin: 20%;
+  padding: 5%;
+  border: 2px 2px outset ;
+  border-color: #00f6ff;
+  box-shadow: 2px 2px 20px #ffffff59;
+  background-color: black;
+  color: #00f6ff;
+}
+
+#loading {
+    background: url('load.gif') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1%;
+    width: 0%;
+    z-index: 9999999;
+}
+
+.right{
+  position: absolute;
+  right: 40px;
+  top: 5px;
+  background-image: url('/close.jpg');
+  background-attachment: url('/close.jpg');
+  border-radius: 50%;
+}
+
+.icon{
+  padding: 5px;
+  background-position: center;
+  background-image: url('./theme/icon/icon-3.png');
+  background-size: 90px;
+  border-radius: 20%;
+  margin-right: 2px;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  z-index: 20005;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+@-webkit-keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+#overlayer {
+  width:100%;
+  height:100%;  
+  position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  z-index: 20000;
+  background: url(./load.gif);
+  background-position: center;
+  background-size: cover;
+}
+
+.preloader p{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    margin-left: -45px;
+    width: 120px;
+    height: 90px;
+    
+    text-align: center;
+    color: transparent;
+    font-size: 24px;
+    z-index: 20001;
+}
+
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index:20004;
+  border: 4px solid #Fff;
+  top: 65%;
+  left: 42%;
+  animation: loader 2s infinite ease;
+}
+
+</style>
+        <!-- jQuery -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script>
+           $(window).load(function() {
+           $(".preloader").delay(5000).fadeOut("slow");
+           $("#overlayer").delay(5000).fadeOut("slow");
+           })
+        </script>
+<link rel="stylesheet" href="home.css" type="text/css" media="all" />
+<link rel="stylesheet" href="font.css">
+</head>
+<body id="body">
+
+  <div id="overlayer"></div>
+<div class="preloader">
+   <div class="loader">
+      <span class="loader-inner"></span>
+   </div>
+   <p> Loading...</p>
+</div>
+
+
+
+  <div class="container" id="container">
+  <div class="top">
+    <span onclick="goBack()" class="dot-1"> < </span>
+    <span onclick="goForward()" class="dot-2"> ></span>
+    &emsp;
+    <img id="appicon" src="startmenu.png" width="20px" alt="" />
+   <span id="appname"> home </span>
+   <span class="dot-3" onclick="bpclose()" > x </span>
+  </div>
+
+  <div class="content">
+   <embed id="app" src="./index.html" height="500vh" width="89%" type="text/html" />
+   <br />
+   <br />
+   <br />
+  </div>
+</div>
+    <div>
+       <div id="settings">
+            <div>
+                <img src="settings.png" width="20px" /> Settings of andows 
+                <img onclick="close()" class="right" width="20px" src="close.jpg" height="20px" />
+            </div>
+            <hr />
+             <p id="title">This is themes section</p>
+            <hr class="themehr"/>
+            <div class="themes">
+              <div id="abg">
+                    <div onclick="a1()">
+          <img onclick="a1()" class="themelook" src="./Theme/default/bg.jpg" alt="" />
+              <p class="themename">🌟Andows light delight🌟
+          <br>
+          <small>this gives gradient delight coloured apps menu and a new wallpaper</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+                    <div onclick="ad1()">
+          <img onclick="a2()" class="themelook" src="./Theme/default/dbg1.jpg" alt="" />
+              <p class="themename">🌟Andows dark🌟
+          <br>
+          <small>this gives gradient delight coloured apps menu and a new wallpaper</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+                    <div onclick="add()">
+          <img onclick="a2()" class="themelook" src="./Theme/default/adbg.jpg" alt="" />
+              <p class="themename">🌟Andows dark🌟
+          <br>
+          <small>this gives gradient delight coloured apps menu and a new wallpaper</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+              </div>
+              <div id="special">
+                <div onclick="s1()">
+          <img onclick="s1()" class="themelook" src="./Theme/special/s1.jpg" alt="" />
+              <p class="themename">🌟🕯 𝙻𝚒𝚐𝚑𝚝 a little Candle🕯️🌟
+          <br>
+          <small>this gives blue coloured apps menu and a new wallpaper</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+                <div class="special" onclick="s2()">
+          <img onclick="s2()" class="themelook" src="./Theme/special/s2.jpg" alt="" />
+              <p class="themename">🌟🌻𝙱𝚕𝚘𝚘𝚖  like a flower🌻🌟
+          <br>
+          <small>this gives blue coloured apps menu and a new wallpaper</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+              </div>
+                
+             <div id="ddark">
+          <div class="ddark" onclick="ddark()">
+          <img onclick="ddark()" class="themelook" src="./Theme/defaultdark.jpg" alt="" />
+          <p class="themename">default dark
+          <br>
+          <small>this gives black coloured apps menu</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="ddark" onclick="d1()">
+              <img onclick="d1()" class="themelook" src="./Theme/d1.jpeg" alt="" />
+                  <p class="themename">default dark 1
+              <br>
+              <small>this gives new colour apps menu and a background</small>
+              </p>
+                <hr class="themehr"/>
+                </div>
+                <div class="ddark" onclick="d2()">
+              <img onclick="d2()" class="themelook" src="./Theme/d2.jpeg" alt="" />
+                  <p class="themename">default dark 2
+              <br>
+              <small>this gives new colour apps menu and a background</small>
+              </p>
+                <hr class="themehr"/>
+                </div>
+                <div class="ddark" onclick="d3()">
+              <img onclick="d3()" class="themelook" src="./Theme/d3.jpeg" alt="" />
+                  <p class="themename">default dark 3
+              <br>
+              <small>this gives new colour apps menu and a background</small>
+              </p>
+                <hr class="themehr"/>
+                </div>
+                <div class="ddark" onclick="d4()">
+              <img onclick="d4()" class="themelook" src="./Theme/d4.jpeg" alt="" />
+                  <p class="themename">default dark 4
+              <br>
+              <small>this gives new colour apps menu and a background</small>
+              </p>
+                <hr class="themehr"/>
+                </div>
+                <div class="ddark" onclick="d5()">
+              <img onclick="d5()" class="themelook" src="./Theme/d5.jpeg" alt="" />
+                  <p class="themename">default dark 5
+              <br>
+              <small>this gives new colour apps menu and a background</small>
+              </p>
+                <hr class="themehr"/>
+                </div>
+                <div class="ddark" onclick="d6()">
+              <img onclick="d6()" class="themelook" src="./Theme/d6.jpeg" alt="" />
+                  <p class="themename">default dark 6
+              <br>
+              <small>this gives new colour apps menu and a background</small>
+              </p>
+                <hr class="themehr"/>
+                </div>
+                <div class="ddark" onclick="d7()">
+              <img onclick="d7()" class="themelook" src="./Theme/d7.jpeg" alt="" />
+                  <p class="themename">default dark 7
+              <br>
+              <small>this gives new colour apps menu and a background</small>
+              </p>
+                <hr class="themehr"/>
+                </div>
+          </div>
+            <div id="dlight">
+              <div class="dlight" onclick="l1()">
+          <img onclick="l1()" class="themelook" src="./Theme/l1.jpeg" alt="" />
+              <p class="themename">default light 1
+          <br>
+          <small>this gives green coloured apps menu and a new wallpaper</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="dlight" onclick="l2()">
+          <img onclick="l2()" class="themelook" src="./Theme/l2.jpeg" alt="" />
+              <p class="themename">default light2
+          <br>
+          <small>this gives blue coloured apps menu and a new wallpaper</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="dlight" onclick="l3()">
+          <img onclick="l3()" class="themelook" src="./Theme/l3.jpeg" alt="" />
+              <p class="themename">default light 3
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="dlight" onclick="l4()">
+          <img onclick="l4()" class="themelook" src="./Theme/l4.jpeg" alt="" />
+              <p class="themename">default light 4
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="dlight" onclick="l5()">
+          <img onclick="l5()" class="themelook" src="./Theme/l5.jpeg" alt="" />
+              <p class="themename">default light 5
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="dlight" onclick="l6()">
+          <img onclick="l6()" class="themelook" src="./Theme/l6.jpeg" alt="" />
+                <p class="themename">default light 6
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+           <div class="dlight" onclick="dlight()">
+          <img onclick="dlight()" class="themelook" src="./Theme/Dlight.jpg" alt="" />
+              <p class="themename"> grey 
+          <br>
+          <small>this gives grey coloured apps menu</small>
+          </p>
+            <hr class="themehr"/>
+            <hr class="themehr"/>
+            </div>
+            </div>
+            <div id="gif">
+              <div class="gif" onclick="g0()">
+          <img onclick="g0()" class="themelook" src="./Theme/l0.gif" alt="" />
+              <p class="themename">Flame live wallpaper
+          <br>
+          <small>this gives gradient coloured apps menu and new live wallpaper</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="gif" onclick="g1()">
+          <img onclick="g1()" class="themelook" src="./Theme/g1.gif" alt="" />
+              <p class="themename">rain live wallpaper
+          <br>
+          <small>this gives black coloured apps menu and live wallpaper</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            
+            </div>
+
+            <div id="bg">
+              <div class="bg" onclick="d8()">
+          <img onclick="d8()" class="themelook" src="./Theme/bg.jpg" alt="" />
+              <p class="themename">default bg 1
+          <br>
+          <small>this gives a new wallpaper and gradient appsmenu color</small>
+          </p>
+            <hr class="themehr"/>
+            </div> 
+            <div class="bg" onclick="e1()">
+          <img onclick="e1()" class="themelook" src="./Theme/1.jpg" alt="" />
+              <p class="themename">fire
+          <br>
+          <small>this gives new colour apps menu and a fire background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="bg" onclick="e2()">
+          <img onclick="e2()" class="themelook" src="./Theme/2.jpg" alt="" />
+              <p class="themename">red ball
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="bg" onclick="e3()">
+          <img onclick="e3()" class="themelook" src="./Theme/3.jpg" alt="" />
+              <p class="themename">Coconut 
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="bg" onclick="e4()">
+          <img onclick="e4()" class="themelook" src="./Theme/4.jpg" alt="" />
+              <p class="themename">hoist flag
+          <br>
+          <small>this gives new colour apps menu and a National Flag background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="bg" onclick="e5">
+          <img onclick="e5()" class="themelook" src="./Theme/5.jpg" alt="" />
+              <p class="themename">Colors magic
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="bg" onclick="e6()">
+          <img onclick="e6()" class="themelook" src="./Theme/6.jpg" alt="" />
+              <p class="themename">candle
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="bg" onclick="e7()">
+          <img onclick="e7()" class="themelook" src="./Theme/7.jpg" alt="" />
+              <p class="themename">flower
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="bg" onclick="e8()">
+          <img onclick="e8()" class="themelook" src="./Theme/8.jpg" alt="" />
+              <p class="themename">Vande Maataram
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="bg" onclick="e9()">
+          <img onclick="e9()" class="themelook" src="./Theme/9.jpg" alt="" />
+              <p class="themename">tech Pentagon 
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="bg" onclick="e10()">
+          <img onclick="e10()" class="themelook" src="./Theme/10.jpg" alt="" />
+              <p class="themename">Rebix jaws
+          <br>
+          <small>this gives new colour apps menu and a background</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+              
+            </div>
+            
+            <div id="color">
+              <div class="color" onclick="lred()">
+          <img onclick="lred()" class="themelook" src="./Theme/lred.jpg" alt="" />
+              <p class="themename">red
+          <br>
+          <small>this gives red coloured apps menu </small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+           
+            </div>
+            <div class="color" onclick="aqua()" >
+          <img onclick="aqua()" class="themelook" src="./Theme/aqua.jpg" alt="" />
+              <p class="themename">aqua
+          <br>
+          <small>this gives aqua coloured apps menu</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="color" onclick="dmaroon()" >
+          <img onclick="dmaroon()" class="themelook" src="./Theme/dmaroon.jpg" alt="" />
+              <p class="themename">Maroon
+          <br>
+          <small>this gives maroon coloured apps menu</small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+            <div class="color" onclick="dviolet()">
+          <img onclick="dviolet()" class="themelook" src="./Theme/dviolet.jpg" alt="" />
+              <p class="themename">Violet
+          <br>
+          <small>this gives Violet coloured apps menu </small>
+          </p>
+            <hr class="themehr"/>
+            </div>
+
+            </div>
+           
+           
+            </div>
+       </div>
+<div id="mySidenav" class="sidenav">
+   
+    <p style="color:white; font-family: andows; position:absolute;top:0px;" id="goto">
+        <a href="#A"> 𝙰 </a>
+    
+         <a href="#B"> 𝙱 </a>
+      
+         <a href="#C"> 𝙲 </a>
+      
+         <a href="#E"> 𝙴 </a>
+      
+         <a href="#F"> 𝙵 </a>
+       
+         <a href="#G"> 𝙶 </a>
+         
+         <a href="#h"> 𝙷 </a>
+      
+         <a href="#I"> 𝙸 </a>
+         
+         <a href="#L"> 𝙻 </a>
+         
+         <a href="#N"> 𝙽 </a>
+         
+         <a href="#O"> 𝙾 </a>
+        
+         <a href="#R"> 𝚁 </a>
+         
+         <a href="#S"> 𝚂 </a>
+       
+         <a href="#T"> 𝚃 </a>
+        
+         <a href="#W"> 𝚆 </a>
+        
+         <a href="#Y"> 𝚈 </a>
+    </p>
+  <a href="javascript:void(0)" class="closebtn" id="close" onclick="closeNav()"><img src="startmenu.png" width="50px" alt="" /></a>
+       <span id="cover" class="andows"> </span>
+   <div class="link">
+       <br />
+       <a id="A" href="#">A</a>
+       <a onclick="closeNav()" href="https://www.amzon.com"><img src="amazon.png" class="icon" style="color:black;" width="40px" alt="" />Amazon</a>
+       <a onclick="closeNav()" href="https://developer.amazon.com/dashboard" ><img src="./Amazondev.jpeg" class="icon" style="color:black;"  width="40px" />AmazonDev</a>
+
+       <a id="B" href="#">B</a>
+
+  <a onclick="closeNav()" class="shortcut" href="https://www.banish.in"><img class="icon" src="bp.png" width="50px" height="50px" alt="" />&ensp;Banish Productions&ensp; 
+  </a>
+  <a onclick="closeNav()" class="shortcut" href="https://www.bing.in"><img class="icon" src="bing.png" width="50px" alt="" />Bing</a>
+
+  <a id="C" href="#">C</a>
+  <a onclick="closeNav()" href="./app/Calender/calender.html"><img class="icon" src="calender.png" width="40px" /> calender</a>
+  <a onclick="closeNav()" href="./app/Calculator/index.html"><img class="icon" src="calculator.png" width="40px" /> Calculator</a>
+  <a onclick="closeNav()" href="https://edition.cnn.com/"><img class="icon" src="cnn.png" width="40px" /> CNN</a>
+  <a onclick="closeNav()" href="https://www.chase.com/"><img src="chase.png" class="icon" width="40px" alt="" />Chase</a>
+  <a onclick="closeNav()" href="https://contacts.google.com/"><img class="icon" src="contacts.png" width="40px" /> Contacts</a>
+  <a id="E" href="#">E</a>
+         <a onclick="closeNav()" href="https://www.ebay.com/"><img  class="icon" src="ebay.png" width="40px" />Ebay</a>
+        <a onclick="closeNav" href="https://banish-productions.github.io/EDU-Eating-MOBILE/"><img src="EE.png" class="icon"  width="40px" />Education Eating</a>
+  
+         <a id="F" href="#">F</a>
+         <a onclick="closeNav()" href="https://www.facebook.com/"><img src="FB.png" class="icon" width="40px" />Facebook</a>
+         <a onclick="closeNav" href="https://www.flipkart.com/">
+             <img class="icon" src="flipkart.png" width="40px " heheight="40px" />Flipkart
+         </a>
+  <a onclick="closeNav()" href="https://surveyheart.com/form/6103e062632e7218b0af5e6a"><img src="feedbackhub.jpeg" class="icon" width="40px" /> Feedback Hub</a>
+
+         <a id="G" href="#">G</a>
+         <a onclick="closeNav" href="https://www.google.com/"><img class="icon" src="google.png" width="40px" />Google</a>
+         <a onclick="closeNav"  href="https://www.games.co.uk/"><img class="icon" src="Games.png" width="40px" />Games</a>
+         <a id="h" href="#">H</a>
+         <a onclick="closeNav" href="https://www.hotstar.com/in"><img class="icon" src="hotstar.jpeg" width="40px" height="40px" />Hotstar</a>
+
+         <a id="I" href="#">I</a>
+         <a onclick="closeNav" href="https://www.instagram.com/"><img class="icon" src="insta.png" width="40px" />Instagram</a>
+         <a onclick="closeNav" href="https://www.instructure.com/"><img class="icon" src="Instructure.png" width="40px" />Instructure</a>
+         <a onclick="closeNav" href="https://www.intuit.com/"><img class="icon" src="intuit.png" width="40px" />&ensp;Intuit</a>
+
+         <a id="L" href="#">L</a>
+         <a onclick="closeNav()" href="https://in.linkedin.com/"><img class="icon" src="linkedin.jpeg" width="40px" />&ensp;Linkedin</a>
+
+         <a id="N" href="#">N</a>
+         <a onclick="closeNav" href="https://www.netflix.com/in/"><img class="icon" src="netflix.png" width="40px" /> Netflix</a>
+         <a onclick="closeNav()" href="https://anotepad.com/"><img src="notes.png" class="icon" width="40px" height="40px" />Notes </a>
+         <a onclick="closeNav" href="https://www.nytimes.com/"><img class="icon" src="nytimes.png" width="40px" /> Nytimes</a>
+
+         <a id="O" href="#">O</a>
+         <a onclick="closeNav" href="https://www.office.com/"><img class="icon" src="office.png" width="40px" /> Office</a>
+
+         <a id="R" href="#">R</a>
+         <a onclick="closeNav" href="https://www.reddit.com/"><img class="icon" src="reddit.png" width="40px" />Reddit</a>
+ 
+         <a id="S" href="#">S</a>
+         <a onclick="settings()" href="#"><img class="icon" src="settings.png" width="40px" alt="" />Settings</a>
+         <a onclick="closeNav" href="https://www.shopify.in/"><img class="icon" src="shopify.png" width="40px" />Shopify</a>
+         <a onclick="closeNav" href="https://www.banish.in/stopwatch/"><img class="icon" src="stopwatch.png" width="40px" />Stopwatch</a>
+
+         <a id="T" href="#">T</a>
+         <a onclick="closeNav" href="https://web.telegram.org/#/loginhttps://www.shopify.in/"><img class="icon" src="telegram.png" width="40px" /> Telegram</a>
+         <a onclick="closeNav" href="https://tdbp.netlify.app/"><img class="icon" src="tdb.png" width="40px" /> TDB</a>
+         <a onclick="closeNav" href="https://m.twitch.tv/"><img src="twitch.png" class="icon" width="40x" />Twitch</a>
+ 
+         <a id="W" href="#">W</a>
+         <a onclick="closeNav" href="https://en.m.wikipedia.org/wiki/Main_Page"><img class="icon" src="wikipedia.png" width="40px" />Wikipedia</a>
+
+         <a id="Y" href="#">Y</a>
+         <a onclick="closeNav" href="https://in.yahoo.com/"><img src="yahoo.png" class="icon" width="40px" /> Yahoo</a>
+         <a onclick="closeNav" href="https://www.youtube.com/"><img class="icon" src="yt.png" width="40px" />&ensp; Youtube</a>
+ 
+         <div>
+             <br />
+             <br />
+         </div>
+         <br />
+         <br />
+    </div>
+</div>
+<div class="taskbar">
+    <span 
+    style=
+  "
+  border-radius:50px;
+  border: none;
+  outline: none;
+  box-shadow:2px 2px 2px royalblue;
+  color: white;
+  cursor: pointer;
+  padding-right:2px;
+  border-radius: 4px;
+  cursor:pointer;
+  " 
+  
+    onclick="openNav()"
+    ><img src="startmenu.png" width="50px" height="50px" alt="" /></span>
+  
+<a class="taskbarapp" onclick="closeNav()" href="https://www.banish.in"><img src="bp.png" width="50px" alt="" />
+</a>
+<button class="option" id="clock" >11:41:15</button>
+</div>
+<script>
+
+function close() {
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/l0.gif)";
+}
+
+
+function offline(){
+  alert('your offline turn on your internet to use andows');
+  document.getElementById("withnet").style.display = "none";
+  document.getElementById("withoutnet").style.display = "block";
+  
+}
+
+
+function s1() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,67,102,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "#004061af";
+  alert('Light a little candle theme applied');
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/special/s1.jpg)";
+}
+function s2() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "#002133ac";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "#002133ac";
+  alert('Bloom like a flower theme applied');
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/special/s2.jpg)";
+}
+
+function g0() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "#0100552a";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "#0100552a";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/l0.gif)";
+}
+
+function sortbg(){
+  document.getElementsByClassName("special").stye.display = "block";
+  document.getElementsById("sbg").class = "themesortnameactive";
+  document.getElementsById("color").stye.display = "none";
+  document.getElementsById("gif").stye.display = "none";
+  document.getElementsById("dlight").stye.display = "none";
+  document.getElementsById("ddark").stye.display = "none";
+}Id
+
+function g1() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "#0100552a";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "#0100552a";
+  document.getElementById("mySidenav").style.width = "80%";
+function d8() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundImage = "linear-gradient(to right, #fe00ff55 , #00d1ff62)";
+  document.getElementsByClassName("container")[0].style.backgroundImage = "linear-gradient(to right, #fe00ff55 , #00d1ff62)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/bg.jpg)";
+}
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/g1.gif)";
+}
+function l1() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,116,17,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0,116,17,0.608)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/l1.jpeg)";
+}
+function l2() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,118,171,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0,118,171,0.608)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/l2.jpeg)";
+}
+function l3() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(154,0,190,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(154,0,190,0.608)";
+  alert('bg applied');
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/l3.jpeg)";
+}
+function l4() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(109,109,109,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(109,109,109,0.608)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/l4.jpeg)";
+}
+function l5() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,162,251,0.419)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0,162,251,0.419)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/l5.jpeg)";
+}
+function l6() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,182,134,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0,182,134,0.608)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/l6.jpeg)";
+}
+function d1() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/d1.jpeg)";
+}
+function d2() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  alert('bg applied');
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/d2.jpeg)";
+}
+function d3() {
+    var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/d3.jpeg)";
+}
+function d4() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/d4.jpeg)";
+}
+function d5() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/d5.jpeg)";
+}
+function d6() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0,90,137,0.608)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/d6.jpeg)";
+}
+function d7() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(135,0,137,0.608)";
+  document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(135,0,137,0.608)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/d7.jpeg)";
+}
+
+function d8() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  alert('bg applied');
+  document.getElementsByClassName("sidenav")[0].style.backgroundImage = "linear-gradient(to right, #fe00ff55 , #00d1ff62)";
+  document.getElementsByClassName("container")[0].style.backgroundImage = "linear-gradient(to right, #fe00ff55 , #00d1ff62)";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/bg.jpg)";
+  document.getElementById("body").style.backgroundImage = "url(./Theme/bg.jpg)";
+}
+
+function settings() {
+  var audio = new Audio("settings.wav");
+
+audio.play();
+  document.getElementById("settings").style.height = "50%";
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("close").style.position = "absolute";
+   document.getElementById("goto").style.position = "absolute";
+   document.getElementById("cover").style.position = "absolute";
+}
+
+function ddark() {
+  var audio = new Audio("Themechanged.wav");
+
+audio.play();
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  alert("default dark theme applied");
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(109,109,109,0.608)";
+}
+function lred() {
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  alert("default light red theme applied");
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(255,17,17,0.3)";
+}
+function aqua() {
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  alert("aqua dark theme applied");
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(0,201,202,0.513)";
+  document.getElementsByClassName("sidenav").style.transition = "5s";
+}
+function dviolet() {
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  alert("violet dark theme applied");
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(66,0,240,0.608)";
+}
+function dmaroon() {
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  alert("default maroon theme applied");
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(135,0,0,0.608)";
+}
+
+function dlight() {
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("settings").style.height = "0%";
+  alert("default light theme applied");
+  document.getElementsByClassName("sidenav")[0].style.backgroundColor = "rgba(236,236,236,0.608)";
+  document.getElementsByClassName("sidenav").style.color = "black";
+}
+
+function openNav() {
+  var audio = new Audio("openmenu.wav");
+
+audio.play();
+
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("myDIV").style.display = "none" ;
+}
+
+function closeNav() {
+  var audio = new Audio("closemenu.wav");
+  audio.play();
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("close").style.position = "absolute";
+   document.getElementById("goto").style.position = "absolute";
+   document.getElementById("cover").style.position = "absolute";
+}
+
+function bing() {
+   document.getElementById("goto").style.position = "absolute";
+  
+  var audio = new Audio("closemenu.wav");
+  audio.play();
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("container").style.display = "block";
+  document.getElementById("container").style.display = "block";
+  document.getElementById("close").style.position = "absolute";
+   document.getElementById("app").src = "bing.html";
+   document.getElementById("appname").innerHTML = 'Bing browser';
+  document.getElementById("appicon").src = "bing.png"
+   document.getElementById("cover").style.position = "absolute";
+}
+function amazon() {
+  document.getElementById("appicon").src = "bp.png"
+   document.getElementById("goto").style.position = "absolute";
+  
+  var audio = new Audio("closemenu.wav");
+  audio.play();
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("container").style.display = "block";
+  document.getElementById("container").style.display = "block";
+  document.getElementById("close").style.position = "absolute";
+   document.getElementById("app").src = "amazon.html";
+   document.getElementById("appname").innerHTML = 'Amazon';
+   document.getElementById("cover").style.position = "absolute";
+}
+function bp() {
+  document.getElementById("appicon").src = "bp.png"
+   document.getElementById("goto").style.position = "absolute";
+  
+  var audio = new Audio("closemenu.wav");
+  audio.play();
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("container").style.display = "block";
+  document.getElementById("container").style.display = "block";
+  document.getElementById("close").style.position = "absolute";
+   document.getElementById("app").src = "bp.html";
+   document.getElementById("appname").innerHTML = 'Banish Productions';
+   document.getElementById("cover").style.position = "absolute";
+}
+function calender() {
+   document.getElementById("goto").style.position = "absolute";
+  document.getElementById("appicon").src = "calender.png"
+  var audio = new Audio("closemenu.wav");
+  audio.play();
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("container").style.display = "block";
+  document.getElementById("container").style.display = "block";
+  document.getElementById("close").style.position = "absolute";
+   document.getElementById("app").src = "calender.html";
+   document.getElementById("appname").innerHTML = 'Calender';
+   document.getElementById("cover").style.position = "absolute";
+}
+
+function goBack() {
+  window.history.back();
+}
+
+function goForward() {
+  window.history.forward();
+}
+
+function bpclose() {
+  var audio = new Audio("openapp.wav");
+  audio.play();
+  document.getElementById("container").style.display = "none";
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100vh"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("cover").style.left = "22%" ;
+   document.getElementById("myDIV").style.display = "none" ;
+}
+
+setInterval(showTime, 1000); 
+
+        function showTime() { 
+
+            let time = new Date(); 
+
+            let hour = time.getHours(); 
+
+            let min = time.getMinutes(); 
+
+            let sec = time.getSeconds(); 
+
+            am_pm = "AM"; 
+
+  
+
+            if (hour > 12) { 
+
+                hour -= 12; 
+
+                am_pm = "PM"; 
+
+            } 
+
+            if (hour == 0) { 
+
+                hr = 12; 
+
+                am_pm = "AM"; 
+
+            } 
+
+  
+
+            hour = hour < 10 ? "0" + hour : hour; 
+
+            min = min < 10 ? "0" + min : min; 
+
+            sec = sec < 10 ? "0" + sec : sec; 
+
+  
+
+            let currentTime = hour + ":"  
+
+                + min + ":" + sec + am_pm; 
+
+  
+
+            document.getElementById("clock") 
+
+                .innerHTML = currentTime; 
+
+        } 
+
+
+
+
+function appsttings() {
+  
+}
+
+function hideerror() {
+  var url = data.url + "&output=embed";
+window.location.replace(url);
+}
+
+</script>
+<script type="text/javascript" src="./Theme/theme.js" charset="utf-8">
+  
+</script>
+</body>
+</html>
